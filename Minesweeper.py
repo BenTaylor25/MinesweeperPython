@@ -9,9 +9,11 @@ def menu_handler(options: Dict[str, Callable[[], None]]):
         print(f"{i+1}. {option}")
 
     choice = ""
-    while choice not in [str(i+1) for i in range(len(options))]:
+    option_numbers = [str(i+1) for i in range(len(options))]   # ["1", "2", ...]
+    while choice not in option_numbers:
         choice = input("->")
-    
+
+    # call function of selected option
     options[list(options)[int(choice)-1]]()
 
 def main_menu():
