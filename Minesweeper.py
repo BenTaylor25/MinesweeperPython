@@ -1,8 +1,10 @@
 from typing import Dict, Callable
 
+from generate_board import generate_board
+
 WIDTH = 15
 HEIGHT = 15
-MINES = 30
+MINE_COUNT = 30
 
 def menu_handler(options: Dict[str, Callable[[], None]]) -> str:
     for i, option in enumerate(options):
@@ -27,7 +29,7 @@ def main_menu():
         pass
 
 def play_minesweeper():
-    pass
+    board = generate_board(WIDTH, HEIGHT, MINE_COUNT)
 
 def settings_menu():
     print("[todo] settings")
