@@ -4,7 +4,7 @@ WIDTH = 15
 HEIGHT = 15
 MINES = 30
 
-def menu_handler(options: Dict[str, Callable[[], None]]):
+def menu_handler(options: Dict[str, Callable[[], None]]) -> str:
     for i, option in enumerate(options):
         print(f"{i+1}. {option}")
 
@@ -16,17 +16,22 @@ def menu_handler(options: Dict[str, Callable[[], None]]):
     # call function of selected option
     options[list(options)[int(choice)-1]]()
 
+    return choice
+
 def main_menu():
-    menu_handler({
-        "test 1": foo,
-        "test 2": bar,
-    })
+    while menu_handler({
+        "Play": play_minesweeper,
+        "Settings": settings_menu,
+        "Exit": (lambda : None)
+    }) != "3":
+        pass
 
-def foo():
-    print("foo")
+def play_minesweeper():
+    pass
 
-def bar():
-    print("bar")
+def settings_menu():
+    print("[todo] settings")
+
 
 if __name__ == "__main__":
     main_menu()
