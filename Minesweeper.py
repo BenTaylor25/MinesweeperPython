@@ -18,14 +18,14 @@ def menu_handler(options: Dict[str, Callable[[], None]]) -> str:
     # call function of selected option
     options[list(options)[int(choice)-1]]()
 
-    return choice
+    return list(options)[int(choice)-1]
 
 def main_menu():
     while menu_handler({
         "Play": play_minesweeper,
         "Settings": settings_menu,
         "Exit": (lambda : None)
-    }) != "3":
+    }) != "Exit":
         pass
 
 def play_minesweeper():
