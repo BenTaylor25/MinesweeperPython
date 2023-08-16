@@ -1,6 +1,7 @@
 from typing import Dict, Callable
 
 from generate_board import generate_board
+from display_board import display_board
 
 WIDTH = 15
 HEIGHT = 15
@@ -31,8 +32,7 @@ def main_menu():
 def play_minesweeper():
     board = generate_board(WIDTH, HEIGHT, MINE_COUNT)
 
-    for row in board:
-        print(list(map(lambda x : 'M' if x == -1 else str(x), row)))
+    display_board(board)
 
 def settings_menu():
     print("[todo] settings")
