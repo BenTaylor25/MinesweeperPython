@@ -2,6 +2,7 @@ from typing import Dict, Callable
 
 from generate_board import generate_board, generate_covers
 from display_board import display_board
+from uncover_tile import uncover_tile
 
 WIDTH = 15
 HEIGHT = 15
@@ -33,11 +34,7 @@ def play_minesweeper():
     board = generate_board(WIDTH, HEIGHT, MINE_COUNT)
     covered = generate_covers(WIDTH, HEIGHT)
 
-    # test
-    covered[1][1] = False
-    covered[1][2] = False
-    covered[2][1] = False
-    covered[2][2] = False
+    uncover_tile(1, 1, board, covered)
 
     display_board(board, covered)
 
