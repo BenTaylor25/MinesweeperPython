@@ -1,6 +1,6 @@
 from typing import Dict, Callable
 
-from generate_board import generate_board
+from generate_board import generate_board, generate_covers
 from display_board import display_board
 
 WIDTH = 15
@@ -31,8 +31,15 @@ def main_menu():
 
 def play_minesweeper():
     board = generate_board(WIDTH, HEIGHT, MINE_COUNT)
+    covered = generate_covers(WIDTH, HEIGHT)
 
-    display_board(board)
+    # test
+    covered[1][1] = False
+    covered[1][2] = False
+    covered[2][1] = False
+    covered[2][2] = False
+
+    display_board(board, covered)
 
 def settings_menu():
     print("[todo] settings")

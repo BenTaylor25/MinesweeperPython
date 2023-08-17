@@ -5,10 +5,16 @@ from dependency_importer import dep_import
 dep_import("colorama")
 from colorama import Fore, Style
 
-def display_board(board: List[List[int]]):
-    for row in board:
-        for char in list(map(value_to_display_char, row)):
-            print(char, end=" ")
+def display_board(board: List[List[int]], covered: List[List[bool]]):
+    assert len(board) == len(covered), "board values and covered values are not compatible"
+    for r in range(len(board)):
+        assert len(board[r]) == len(covered[r]), "board values and covered values are not compatible"
+        for c in range(len(board[r])):
+            if covered[r][c]:
+                print(Fore.WHITE + "?", end = " ")
+            else:
+                char = value_to_display_char(board[r][c])
+                print(char, end=" ")
         print()
     print(Style.RESET_ALL)
 

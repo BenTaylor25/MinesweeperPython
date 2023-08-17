@@ -42,3 +42,6 @@ def _increment_if_not_mine(board, row, col):
     if board[row][col] != MINE:
         board[row][col] += 1
         # print(f"{row}, {col} ({board[row][col]})")
+
+def generate_covers(width: int, height: int) -> List[List[bool]]:
+    return [[True for _ in range(width)] for _ in range(height)]
