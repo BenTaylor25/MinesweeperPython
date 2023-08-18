@@ -1,5 +1,9 @@
 from typing import Dict, Callable
 
+from dependency_importer import dep_import
+dep_import("pynput")
+from pynput.keyboard import Key, Listener
+
 from generate_board import generate_board, generate_covers
 from display_board import display_board
 from uncover_tile import uncover_tile
@@ -42,5 +46,14 @@ def settings_menu():
     print("[todo] settings")
 
 
+def on_press(key):
+    print('{0} pressed'.format(key))
+
+    if key == Key.esc:
+        return False
+
 if __name__ == "__main__":
-    main_menu()
+    # main_menu()
+    
+    with Listener(on_press=on_press) as listener:
+        listener.join()
