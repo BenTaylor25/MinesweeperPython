@@ -1,22 +1,25 @@
-from typing import List
+from typing import List, Tuple
 
 from dependency_importer import dep_import
 
 dep_import("colorama")
-from colorama import Fore, Style
+from colorama import Fore, Back, Style
 
-def display_board(board: List[List[int]], covered: List[List[bool]]):
+def display_board(board: List[List[int]], covered: List[List[bool]], cursor: Tuple[int, int]):
     assert len(board) == len(covered), "board values and covered values are not compatible"
     for r in range(len(board)):
         assert len(board[r]) == len(covered[r]), "board values and covered values are not compatible"
         for c in range(len(board[r])):
+            if cursor == (r, c):
+                print(Fore.BLACK + Back.WHITE)
+
             if covered[r][c]:
-                print(Fore.WHITE + "?", end = " ")
+                print(Fore.WHITE + "?", end = "")
             else:
                 char = value_to_display_char(board[r][c])
-                print(char, end=" ")
+                print(char, end="")
+            print(Style.RESET_ALL, end=" ")
         print()
-    print(Style.RESET_ALL)
 
 COLOURS = [
     Fore.GREEN,

@@ -37,15 +37,17 @@ def main_menu():
 def play_minesweeper():
     board = generate_board(WIDTH, HEIGHT, MINE_COUNT)
     covered = generate_covers(WIDTH, HEIGHT)
+    cursor = (0, 0)
 
     uncover_tile(1, 1, board, covered)
 
-    display_board(board, covered)
+    display_board(board, covered, cursor)
 
 def settings_menu():
     print("[todo] settings")
 
 
+# test
 def on_press(key):
     print('{0} pressed'.format(key))
 
@@ -53,7 +55,5 @@ def on_press(key):
         return False
 
 if __name__ == "__main__":
-    # main_menu()
-    
-    with Listener(on_press=on_press) as listener:
-        listener.join()
+    main_menu()
+
