@@ -7,6 +7,7 @@ from pynput.keyboard import Key, Listener
 from generate_board import generate_board, generate_covers
 from display_board import display_board
 from uncover_tile import uncover_tile
+from keyboard_input import get_cursor_command
 
 WIDTH = 15
 HEIGHT = 15
@@ -39,9 +40,11 @@ def play_minesweeper():
     covered = generate_covers(WIDTH, HEIGHT)
     cursor = (0, 0)
 
-    uncover_tile(1, 1, board, covered)
+    # uncover_tile(1, 1, board, covered)
 
     display_board(board, covered, cursor)
+    cmd = get_cursor_command()
+    print(cmd)
 
 def settings_menu():
     print("[todo] settings")
