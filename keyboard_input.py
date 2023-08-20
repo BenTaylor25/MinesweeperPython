@@ -32,8 +32,41 @@ def get_cursor_command() -> CursorActionType:
         # remove key from terminal
         Controller().press(Key.backspace)
 
-        if _most_recent_key == KeyCode.from_char('j'):
+        if _most_recent_key in (
+            KeyCode.from_char('j'),
+            Key.down,
+        ):
             cmd = CursorAction.DOWN
+
+        elif _most_recent_key in (
+            KeyCode.from_char('k'),
+            Key.up,
+        ):
+            cmd = CursorAction.UP
+
+        elif _most_recent_key in (
+            KeyCode.from_char('h'),
+            Key.left,
+        ):
+            cmd = CursorAction.LEFT
+
+        elif _most_recent_key in (
+            KeyCode.from_char('l'),
+            Key.right,
+        ):
+            cmd = CursorAction.RIGHT
+
+        elif _most_recent_key in (
+            KeyCode.from_char('f'),
+            KeyCode.from_char('m'),
+        ):
+            cmd = CursorAction.FLAG
+
+        elif _most_recent_key in (
+            KeyCode.from_char('u'),
+            KeyCode.from_char('s'),
+        ):
+            cmd = CursorAction.UNCOVER
 
     return cmd
 
