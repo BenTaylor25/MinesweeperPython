@@ -30,7 +30,8 @@ def get_cursor_command() -> CursorActionType:
             listener.join()
 
         # remove key from terminal
-        Controller().press(Key.backspace)
+        if cmd != None:
+            Controller().press(Key.backspace)
 
         if _most_recent_key in (
             KeyCode.from_char('j'),
