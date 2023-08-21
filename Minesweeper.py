@@ -59,4 +59,3 @@ def on_press(key):
 
 if __name__ == "__main__":
     main_menu()
-
