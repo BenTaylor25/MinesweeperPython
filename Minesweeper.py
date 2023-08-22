@@ -1,3 +1,4 @@
+import os
 from typing import Dict, Callable
 
 from dependency_importer import dep_import
@@ -43,6 +44,7 @@ def play_minesweeper():
     # uncover_tile(1, 1, board, covered)
 
     while True:
+        clear_screen()
         display_board(board, covered, cursor)
         cmd = get_cursor_command()
 
@@ -50,6 +52,12 @@ def play_minesweeper():
             cursor = (cursor[0] - 1, cursor[1])
         elif cmd == CursorAction.DOWN and cursor[0] < HEIGHT - 1:
             cursor = (cursor[0] + 1, cursor[1])
+
+def clear_screen():
+    if os.name == "nt":
+        _ = os.system("cls")
+    else:
+        _ = os.system("clear")
 
 def settings_menu():
     print("[todo] settings")
