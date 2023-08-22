@@ -52,6 +52,10 @@ def play_minesweeper():
             cursor = (cursor[0] - 1, cursor[1])
         elif cmd == CursorAction.DOWN and cursor[0] < HEIGHT - 1:
             cursor = (cursor[0] + 1, cursor[1])
+        elif cmd == CursorAction.LEFT and cursor[1] > 0:
+            cursor = (cursor[0], cursor[1] - 1)
+        elif cmd == CursorAction.RIGHT and cursor[1] < WIDTH - 1:
+            cursor = (cursor[0], cursor[1] + 1)
 
 def clear_screen():
     if os.name == "nt":
