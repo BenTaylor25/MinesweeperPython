@@ -11,7 +11,7 @@ def display_board(board: List[List[int]], covered: List[List[bool]], cursor: Tup
         assert len(board[r]) == len(covered[r]), "board values and covered values are not compatible"
         for c in range(len(board[r])):
             if cursor == (r, c):
-                print(Fore.BLACK + Back.WHITE)
+                print(Fore.BLACK + Back.WHITE, end="")
 
             if covered[r][c]:
                 print(Fore.WHITE + "?", end = "")
