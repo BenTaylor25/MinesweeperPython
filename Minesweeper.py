@@ -58,6 +58,8 @@ def play_minesweeper():
             cursor = (cursor[0], cursor[1] + 1)
         elif cmd == CursorAction.UNCOVER:
             uncover_tile(*cursor, board, covered)
+        elif cmd == CursorAction.FLAG:
+            pass
 
 def clear_screen():
     if os.name == "nt":
