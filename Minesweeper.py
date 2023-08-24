@@ -7,7 +7,7 @@ from pynput.keyboard import Key, Listener
 
 from generate_board import generate_board, generate_covers
 from display_board import display_board
-from uncover_tile import uncover_tile
+from tile_actions import uncover_tile, flag_tile
 from keyboard_input import get_cursor_command, CursorAction
 
 WIDTH = 15
@@ -59,7 +59,7 @@ def play_minesweeper():
         elif cmd == CursorAction.UNCOVER:
             uncover_tile(*cursor, board, covered)
         elif cmd == CursorAction.FLAG:
-            pass
+            flag_tile(*cursor, covered)
 
 def clear_screen():
     if os.name == "nt":
