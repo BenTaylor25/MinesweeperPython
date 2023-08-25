@@ -1,6 +1,7 @@
 from typing import List, Tuple
 
 from dependency_importer import dep_import
+from tile_actions import COVERED, FLAGGED
 
 dep_import("colorama")
 from colorama import Fore, Back, Style
@@ -13,8 +14,10 @@ def display_board(board: List[List[int]], covered: List[List[bool]], cursor: Tup
             if cursor == (r, c):
                 print(Back.WHITE + Style.DIM, end="")
 
-            if covered[r][c]:
-                print(Fore.WHITE + "?", end = "")
+            if covered[r][c] == COVERED:
+                print(Fore.WHITE + "?", end="")
+            elif covered[r][c] == FLAGGED:
+                print(Fore.WHITE + "F", end="")
             else:
                 char = value_to_display_char(board[r][c])
                 print(char, end="")
