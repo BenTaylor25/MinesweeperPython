@@ -59,7 +59,7 @@ def play_minesweeper():
         elif cmd == CursorAction.RIGHT and cursor[1] < WIDTH - 1:
             cursor = (cursor[0], cursor[1] + 1)
         elif cmd == CursorAction.UNCOVER:
-            game_over = uncover_tile(*cursor, board, covered)
+            uncover_tile(*cursor, board, covered)
         elif cmd == CursorAction.FLAG:
             flag_tile(*cursor, covered)
 
