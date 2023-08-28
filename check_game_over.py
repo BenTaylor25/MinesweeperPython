@@ -2,6 +2,7 @@ from typing import List
 
 from generate_board import MINE
 from tile_actions import UNCOVERED, COVERED, FLAGGED
+from logger import log_message
 
 def check_game_over(board: List[List[int]], covered: List[List[int]]) -> bool:
     return check_mine_uncovered(board, covered) or check_game_win(board, covered)
@@ -10,10 +11,14 @@ def check_mine_uncovered(board: List[List[int]], covered: List[List[int]]) -> bo
     # remove check from tile_actions.uncover_tile()
     assert len(board) == len(covered), "dimensions of board and status are not the same"
 
+    log_message(str(covered[0][0]))
     for row in range(len(board)):
         assert len(board[row]) == len(covered[row]), "dimensions of board and status are not the same"
 
         for col in range(len([board[row]])):
+            if covered[row][col] == UNCOVERED:
+                log_message("found uncovered")
+
             if covered[row][col] == UNCOVERED and board[row][col] == MINE:
                 # if there exists an uncovered mine, end the game
                 return True
