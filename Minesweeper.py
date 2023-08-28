@@ -10,6 +10,7 @@ from display_board import display_board
 from tile_actions import uncover_tile, flag_tile
 from check_game_over import check_game_over
 from keyboard_input import get_cursor_command, CursorAction
+from logger import clear_log, log_message
 
 WIDTH = 15
 HEIGHT = 15
@@ -87,4 +88,5 @@ def on_press(key):
         return False
 
 if __name__ == "__main__":
+    clear_log()
     main_menu()
