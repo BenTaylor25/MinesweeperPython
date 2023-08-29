@@ -8,4 +8,7 @@ def clear_log():
 
 def log_message(message: str):
     with open(FILENAME, 'a') as f:
-        f.write(message + "\n\n")
+        f.write(message + "\n")
+
+def log_nl(message: str = ""):
+    log_message(message + "\n")
