@@ -35,37 +35,41 @@ def get_cursor_command() -> CursorActionType:
 
         if _most_recent_key in (
             KeyCode.from_char('j'),
+            KeyCode.from_char('s'),
             Key.down,
         ):
             cmd = CursorAction.DOWN
 
         elif _most_recent_key in (
             KeyCode.from_char('k'),
+            KeyCode.from_char('w'),
             Key.up,
         ):
             cmd = CursorAction.UP
 
         elif _most_recent_key in (
             KeyCode.from_char('h'),
+            KeyCode.from_char('a'),
             Key.left,
         ):
             cmd = CursorAction.LEFT
 
         elif _most_recent_key in (
             KeyCode.from_char('l'),
+            KeyCode.from_char('d'),
             Key.right,
         ):
             cmd = CursorAction.RIGHT
 
         elif _most_recent_key in (
-            KeyCode.from_char('f'),
             KeyCode.from_char('m'),
+            KeyCode.from_char('f'),
         ):
             cmd = CursorAction.FLAG
 
         elif _most_recent_key in (
             KeyCode.from_char('u'),
-            KeyCode.from_char('s'),
+            KeyCode.from_char('e'),
         ):
             cmd = CursorAction.UNCOVER
 
