@@ -24,7 +24,7 @@ def check_mine_uncovered(board: List[List[int]], covered: List[List[int]]) -> bo
 
 def check_game_win(board: List[List[int]], covered: List[List[int]]) -> bool:
     for row in range(len(board)):
-        for col in range(len([board[row]])):
+        for col in range(len(board[row])):
             if covered[row][col] == COVERED:
                 # if there exists a covered tile, resume game
                 return False
