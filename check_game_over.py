@@ -14,15 +14,10 @@ def check_mine_uncovered(board: List[List[int]], covered: List[List[int]]) -> bo
     for row in range(len(board)):
         assert len(board[row]) == len(covered[row]), "dimensions of board and status are not the same"
 
-        for col in range(len([board[row]])):
-            if covered[row][col] == UNCOVERED:
-                # only reaches column 0
-                log_message(f"found uncovered: {row}, {col}")
-
+        for col in range(len(board[row])):
             if covered[row][col] == UNCOVERED and board[row][col] == MINE:
                 # if there exists an uncovered mine, end the game
                 return True
-    log_nl()
 
     return False
 
