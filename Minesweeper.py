@@ -43,9 +43,9 @@ def play_minesweeper():
     covered = generate_covers(WIDTH, HEIGHT)
     cursor = (0, 0)
 
-    # uncover_tile(1, 1, board, covered)
-
     game_over = False
+    game_won = False
+
     while not game_over:
         clear_screen()
         display_board(board, covered, cursor)
@@ -64,11 +64,16 @@ def play_minesweeper():
         elif cmd == CursorAction.FLAG:
             flag_tile(*cursor, covered)
 
-        game_over = check_game_over(board, covered)
+        game_over, game_won = check_game_over(board, covered)
 
     clear_screen()
     display_board(board, covered, cursor)
-    print("\nGame Over\n")
+
+    if game_won:
+        print("\nYou Win\n")
+    else:
+        print("\nGame Over\n")
+    input()
 
 def clear_screen():
     if os.name == "nt":

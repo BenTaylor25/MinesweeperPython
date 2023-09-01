@@ -5,7 +5,10 @@ from tile_actions import UNCOVERED, COVERED, FLAGGED
 from logger import log_message, log_nl
 
 def check_game_over(board: List[List[int]], covered: List[List[int]]) -> bool:
-    return check_mine_uncovered(board, covered) or check_game_win(board, covered)
+    game_won = check_game_win(board, covered)
+    game_over = check_mine_uncovered(board, covered) or game_won
+
+    return game_over, game_won
 
 def check_mine_uncovered(board: List[List[int]], covered: List[List[int]]) -> bool:
     # remove check from tile_actions.uncover_tile()
