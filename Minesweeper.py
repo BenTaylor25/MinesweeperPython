@@ -1,8 +1,6 @@
 from dependency_importer import install_all
 install_all("pynput", "colorama")
 
-from pynput.keyboard import Key, Listener
-
 from menu_handler import menu_handler
 from clear_screen import clear_screen
 from generate_board import generate_board, generate_covers
