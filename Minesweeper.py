@@ -1,5 +1,6 @@
-from dependency_importer import dep_import
-dep_import("pynput")
+from dependency_importer import install_all
+install_all("pynput", "colorama")
+
 from pynput.keyboard import Key, Listener
 
 from menu_handler import menu_handler

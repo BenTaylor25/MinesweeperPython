@@ -1,10 +1,8 @@
 from typing import List, Tuple
 
-from dependency_importer import dep_import
-from tile_actions import COVERED, FLAGGED
-
-dep_import("colorama")
 from colorama import Fore, Back, Style
+
+from tile_actions import COVERED, FLAGGED
 
 def display_board(board: List[List[int]], covered: List[List[bool]], cursor: Tuple[int, int]):
     assert len(board) == len(covered), "board values and covered values are not compatible"
