@@ -80,13 +80,6 @@ def settings_menu():
     print("[todo] settings")
 
 
-# test
-def on_press(key):
-    print('{0} pressed'.format(key))
-
-    if key == Key.esc:
-        return False
-
 if __name__ == "__main__":
     clear_log()
     main_menu()
