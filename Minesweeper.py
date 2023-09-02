@@ -1,10 +1,10 @@
-import os
 from typing import Dict, Callable
 
 from dependency_importer import dep_import
 dep_import("pynput")
 from pynput.keyboard import Key, Listener
 
+from clear_screen import clear_screen
 from generate_board import generate_board, generate_covers
 from display_board import display_board
 from tile_actions import uncover_tile, flag_tile
@@ -75,11 +75,6 @@ def play_minesweeper():
         print("\nGame Over\n")
     input()
 
-def clear_screen():
-    if os.name == "nt":
-        _ = os.system("cls")
-    else:
-        _ = os.system("clear")
 
 def settings_menu():
     print("[todo] settings")
