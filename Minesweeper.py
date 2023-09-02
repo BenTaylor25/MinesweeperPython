@@ -4,6 +4,7 @@ from dependency_importer import dep_import
 dep_import("pynput")
 from pynput.keyboard import Key, Listener
 
+from menu_handler import menu_handler
 from clear_screen import clear_screen
 from generate_board import generate_board, generate_covers
 from display_board import display_board
@@ -16,19 +17,6 @@ WIDTH = 15
 HEIGHT = 15
 MINE_COUNT = 30
 
-def menu_handler(options: Dict[str, Callable[[], None]]) -> str:
-    for i, option in enumerate(options):
-        print(f"{i+1}. {option}")
-
-    choice = ""
-    option_numbers = [str(i+1) for i in range(len(options))]   # ["1", "2", ...]
-    while choice not in option_numbers:
-        choice = input("-> ")
-
-    # call function of selected option
-    options[list(options)[int(choice)-1]]()
-
-    return list(options)[int(choice)-1]
 
 def main_menu():
     while menu_handler({
