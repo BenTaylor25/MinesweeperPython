@@ -1,5 +1,3 @@
-from typing import Dict, Callable
-
 from dependency_importer import dep_import
 dep_import("pynput")
 from pynput.keyboard import Key, Listener
