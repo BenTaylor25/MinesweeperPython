@@ -13,7 +13,7 @@ from logger import clear_log, log_message
 
 
 def main_menu():
-    while menu_handler({
+    while menu_handler("Main Menu", {
         "Play": play_minesweeper,
         "Settings": settings_menu,
         "Exit": (lambda : None)
