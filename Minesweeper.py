@@ -1,10 +1,11 @@
 from dependency_importer import install_all
-install_all("pynput", "colorama")
+install_all(["pynput", "colorama"])
 
 from menu_handler import menu_handler
 from clear_screen import clear_screen
 from generate_board import generate_board, generate_covers
 from display_board import display_board
+from settings import settings_menu
 from tile_actions import uncover_tile, flag_tile
 from check_game_over import check_game_over
 from keyboard_input import get_cursor_command, CursorAction
@@ -59,10 +60,6 @@ def play_minesweeper():
     else:
         print("\nGame Over\n")
     input()
-
-
-def settings_menu():
-    print("[todo] settings")
 
 
 if __name__ == "__main__":
