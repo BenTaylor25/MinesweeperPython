@@ -1,6 +1,8 @@
 from typing import Dict, Callable
 
-def menu_handler(options: Dict[str, Callable[[], None]]) -> str:
+def menu_handler(title: str, options: Dict[str, Callable[[], None]]) -> str:
+    print()
+    print(title)
     for i, option in enumerate(options):
         print(f"{i+1}. {option}")
 
