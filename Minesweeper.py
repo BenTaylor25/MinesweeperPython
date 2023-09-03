@@ -5,15 +5,11 @@ from menu_handler import menu_handler
 from clear_screen import clear_screen
 from generate_board import generate_board, generate_covers
 from display_board import display_board
-from settings import settings_menu
+from settings import settings_menu, WIDTH, HEIGHT, MINE_COUNT
 from tile_actions import uncover_tile, flag_tile
 from check_game_over import check_game_over
 from keyboard_input import get_cursor_command, CursorAction
 from logger import clear_log, log_message
-
-WIDTH = 15
-HEIGHT = 15
-MINE_COUNT = 30
 
 
 def main_menu():
