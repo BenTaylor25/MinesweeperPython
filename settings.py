@@ -12,21 +12,26 @@ def settings_menu():
         pass
 
 def set_width():
-    new_width_str = input("New Width: ")
+    new_width = get_int_in_range("width", 20)
+    if new_width != -1:
+        global WIDTH
+        WIDTH = new_width
 
-    if not new_width_str.isnumeric():
-        print("Failed: width must be a positive whole number.")
-        return
+def get_int_in_range(setting_name: str, max_value: int) -> int:
+    new_value_str = input(f"New {setting_name.capitalize()}: ")
 
-    new_width = int(new_width_str)
+    if not new_value_str.isnumeric():
+        print(f"Failed: {setting_name} must be a positive whole number.")
+        return -1
 
-    if new_width < 1:
-        print("Failed: width is too small.")
-        return
+    new_value = int(new_value_str)
 
-    if new_width > 20:
-        print("Failed: width is too large.")
-        return
+    if new_value < 1:
+        print(f"Failed: {setting_name} is too small.")
+        return -1
 
-    global WIDTH
-    WIDTH = new_width
+    if new_value > 20:
+        print(f"Failed: {setting_name} is too large.")
+        return -1
+    
+    return new_value
