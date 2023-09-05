@@ -1,4 +1,5 @@
 from menu_handler import menu_handler
+from string_helpers import capitalise_words
 
 WIDTH = 15
 HEIGHT = 15
@@ -41,7 +42,7 @@ def set_mine_count():
 
 
 def get_setting_as_int_in_range(setting_name: str, max_value: int) -> int:
-    new_value_str = input(f"New {setting_name.capitalize()}: ")
+    new_value_str = input(f"New {capitalise_words(setting_name)}: ")
 
     if not new_value_str.isnumeric():
         print(f"Failed: {setting_name} must be a positive whole number.")
