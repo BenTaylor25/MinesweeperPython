@@ -18,14 +18,14 @@ def settings_menu():
 def set_width():
     new_width = get_setting_as_int_in_range("width", 20)
 
-    if new_width != -1:
+    if new_width != INVALID_SETTING:
         global WIDTH
         WIDTH = new_width
 
 def set_height():
     new_height = get_setting_as_int_in_range("height", 20)
 
-    if new_height != -1:
+    if new_height != INVALID_SETTING:
         global HEIGHT
         HEIGHT = new_height
 
@@ -36,11 +36,12 @@ def set_mine_count():
         print("Failed: Mine Count cannot be greater than the number of tiles on the grid.")
         return
 
-    if new_mine_count != -1:
+    if new_mine_count != INVALID_SETTING:
         global MINE_COUNT
         MINE_COUNT = new_mine_count
 
 
+INVALID_SETTING = -1
 def get_setting_as_int_in_range(setting_name: str, max_value: int) -> int:
     new_value_str = input(f"New {capitalise_words(setting_name)}: ")
 
@@ -57,5 +58,5 @@ def get_setting_as_int_in_range(setting_name: str, max_value: int) -> int:
     if new_value > max_value:
         print(f"Failed: {setting_name} is too large.")
         return -1
-    
+
     return new_value
