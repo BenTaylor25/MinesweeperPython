@@ -4,7 +4,11 @@ from colorama import Fore, Back, Style
 
 from tile_actions import COVERED, FLAGGED
 
-def display_board(board: List[List[int]], covered: List[List[bool]], cursor: Tuple[int, int]):
+def display_board(
+    board: List[List[int]],
+    covered: List[List[bool]],
+    cursor: Tuple[int, int]
+):
     assert len(board) == len(covered), "board values and covered values are not compatible"
     for r in range(len(board)):
         assert len(board[r]) == len(covered[r]), "board values and covered values are not compatible"

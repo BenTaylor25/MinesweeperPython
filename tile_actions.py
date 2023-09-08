@@ -7,7 +7,12 @@ UNCOVERED = 0
 COVERED = 1
 FLAGGED = 2
 
-def uncover_tile(row: int, col: int, board: List[List[int]], covered: List[List[int]]):
+def uncover_tile(
+    row: int,
+    col: int,
+    board: List[List[int]],
+    covered: List[List[int]]
+):
     if covered[row][col] == COVERED:
         covered[row][col] = UNCOVERED
 

@@ -1,6 +1,10 @@
 from typing import List, Callable
 
-def apply_to_neighbours(board: List[List[int]], row: int, col: int, callback: Callable[[List[List[int]], int, int], None]):
+def apply_to_neighbours(
+    board: List[List[int]],
+    row: int, col: int,
+    callback: Callable[[List[List[int]], int, int], None]
+):
     n_row_min = max(0, row - 1)
     n_row_max = min(len(board[0]) - 1, row + 1)
 
