@@ -7,6 +7,10 @@ The exact win condition varies by version. In this version you must flag all min
 
 ![image](https://github.com/BenTaylor25/MinesweeperPython/assets/97246704/7dae13ed-4cab-47a5-b245-d6735d5161f5)
 
+The size of the grid and the number of mines can be changed from the settings.
+
+![image](https://github.com/BenTaylor25/MinesweeperPython/assets/97246704/202568f8-ac9b-404b-b470-d67c4af899c0)
+
 
 ## Controls
 
