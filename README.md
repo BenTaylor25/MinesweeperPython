@@ -5,6 +5,8 @@ The grid has several mines that you don't want to step on.
 Non-mine tiles indicate the number of mines adjacent to them.  
 The exact win condition varies by version. In this version you must flag all mines, and step on all non-mines.
 
+![image](https://github.com/BenTaylor25/MinesweeperPython/assets/97246704/7dae13ed-4cab-47a5-b245-d6735d5161f5)
+
 
 ## Controls
 
