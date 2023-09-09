@@ -14,8 +14,8 @@ The size of the grid and the number of mines can be changed from the settings.
 
 ## Controls
 
-The controls for this version are inspired by Vim:
-`h`, `j`, `k`, and `l` for movement. Arrow key movement, and `w`, `a`, `s`, `d` movement is also available.
+The controls for this version are inspired by Vim with `h`, `j`, `k`, and `l` for movement.
+However arrow keys, and `w`, `a`, `s`, `d` can also be used.
 
 Flag a tile with `f` (for flag), or `m` (for mine).
 
