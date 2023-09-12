@@ -1,5 +1,6 @@
 from menu_handler import menu_handler
 from string_helpers import capitalise_words
+from logger import log_message
 
 WIDTH = 15
 HEIGHT = 15
@@ -20,6 +21,7 @@ def set_width():
 
     if new_width != INVALID_SETTING:
         global WIDTH
+        log_message(f"Changing Width setting from {WIDTH} to {new_width}")
         WIDTH = new_width
 
 def set_height():
@@ -27,17 +29,20 @@ def set_height():
 
     if new_height != INVALID_SETTING:
         global HEIGHT
+        log_message(f"Changing Height setting from {HEIGHT} to {new_height}")
         HEIGHT = new_height
 
 def set_mine_count():
     new_mine_count = get_setting_as_int_in_range("mine count", 300)
 
     if new_mine_count > WIDTH * HEIGHT:
+        log_message(f"Failed to set Mine Count setting to {new_mine_count} because >{WIDTH*HEIGHT} (width*height)")
         print("Failed: Mine Count cannot be greater than the number of tiles on the grid.")
         return
 
     if new_mine_count != INVALID_SETTING:
         global MINE_COUNT
+        log_message(f"Changing the Mine Count setting from {MINE_COUNT} to {new_mine_count}")
         MINE_COUNT = new_mine_count
 
 
