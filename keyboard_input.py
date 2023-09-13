@@ -74,4 +74,3 @@ def get_cursor_command() -> CursorActionType:
             cmd = CursorAction.UNCOVER
 
     return cmd
-

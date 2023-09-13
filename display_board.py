@@ -4,6 +4,7 @@ from colorama import Fore, Back, Style
 
 from tile_actions import COVERED, FLAGGED
 
+
 def display_board(
     board: List[List[int]],
     covered: List[List[bool]],

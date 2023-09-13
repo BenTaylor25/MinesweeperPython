@@ -3,6 +3,7 @@ from random import randint
 
 from apply_to_neighbours import apply_to_neighbours
 
+
 MINE = -1
 
 def generate_board(width: int, height: int, mine_count: int) -> List[List[int]]:

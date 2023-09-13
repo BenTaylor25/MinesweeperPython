@@ -1,7 +1,8 @@
 from typing import List
 
-from apply_to_neighbours import apply_to_neighbours
 from generate_board import MINE
+from apply_to_neighbours import apply_to_neighbours
+
 
 UNCOVERED = 0
 COVERED = 1
