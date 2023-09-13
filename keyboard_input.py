@@ -3,6 +3,7 @@ from typing import Literal
 
 from pynput.keyboard import Key, Listener, KeyCode, Controller
 
+
 class CursorAction(Enum):
     UP = 1
     RIGHT = 2
